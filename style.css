@@ -1,0 +1,209 @@
+:root {
+    --clr-primary-red: hsl(0, 100%, 67%);
+    --clr-primary-orange: hsl(39, 100%, 56%);
+    --clr-primary-teal: hsl(166, 100%, 37%);
+
+    --clr-background-slateblue: hsl(252, 100%, 67%);
+    --clr-background-royalblue: hsl(241, 81%, 54%);
+    --clr-circle-violetblue: hsla(256, 72%, 46%, 1);
+    --clr-circle-persianblue: hsla(241, 72%, 46%, 0);
+
+    --clr-neutral-white: hsl(0, 0%, 100%);
+    --clr-neutral-paleblue: hsl(221, 100%, 96%);
+    --clr-neutral-lavender: hsl(241, 100%, 89%);
+    --clr-neutral-darkblue: hsl(224, 30%, 27%);
+    --clr-neutral-lightblue: hsla(224, 30%, 27%, 0.588);
+
+    --fw-regular: 500;
+    --fw-bold: 700;
+    --fw-bolder: 800;
+
+    --ff-base: "Hanken Grotesk", sans-serif;
+}
+/*
+    Josh's Custom CSS Reset
+    https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+* {
+    margin: 0;
+}
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+/*
+    Specific styling
+*/
+
+html,
+body {
+    min-height: 100%;
+}
+
+body {
+    font-family: var(--ff-base);
+    font-weight: var(--fw-regular);
+    font-size: 18px;
+    height: 100vh;
+    display: grid;
+    place-content: center;
+    grid-template-rows: 1fr auto;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.result {
+    background: linear-gradient(
+        var(--clr-background-slateblue),
+        var(--clr-background-royalblue)
+    );
+    color: var(--clr-neutral-white);
+    padding: 30px 60px;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 24rem;
+}
+.result h2 {
+    color: var(--clr-neutral-lavender);
+    padding: 10px;
+}
+.score-circle {
+    background: linear-gradient(
+        var(--clr-circle-violetblue),
+        var(--clr-circle-persianblue)
+    );
+    border-radius: 50%;
+    width: 70%;
+    aspect-ratio: 1/1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0;
+}
+.score-circle p {
+    color: var(--clr-neutral-lavender);
+}
+.score-circle span {
+    font-size: 4rem;
+    font-weight: var(--fw-bolder);
+    color: var(--clr-neutral-white);
+}
+.score-description h3 {
+    font-size: 2rem;
+    color: var(--clr-neutral-white);
+    margin: 0.9rem 0;
+}
+.score-description p {
+    color: var(--clr-neutral-lavender);
+    margin-bottom: 1rem;
+}
+.score-description {
+    color: var(--clr-neutral-lavender);
+}
+.summary {
+    max-width: 24rem;
+    padding: 30px 40px;
+}
+.summary h2 {
+    text-align: start;
+    padding-bottom: 2.5rem;
+    color: var(--clr-neutral-darkblue);
+}
+.score-categories div {
+    display: flex;
+    justify-content: space-between;
+    gap: 6rem;
+    font-weight: var(--fw-bold);
+    padding: 20px 10px;
+}
+.score-categories div:nth-child(1) {
+    color: var(--clr-primary-red);
+}
+.score-categories div:nth-child(2) {
+    color: var(--clr-primary-orange);
+}
+.score-categories div:nth-child(3) {
+    color: var(--clr-primary-teal);
+}
+.score-categories div:nth-child(4) {
+    color: var(--clr-background-royalblue);
+}
+.score-categories div p {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.score-categories div p img {
+    display: inline;
+}
+.score-value {
+    color: var(--clr-neutral-lightblue);
+}
+
+.score-value span {
+    color: var(--clr-neutral-darkblue);
+}
+.summary button {
+    color: var(--clr-neutral-paleblue);
+    background-color: var(--clr-neutral-darkblue);
+    width: 100%;
+    border: none;
+    border-radius: 30px;
+    padding: 10px;
+    margin-top: 30px;
+    cursor: pointer;
+}
+.summary button:is(:hover, :focus) {
+    background: linear-gradient(
+        var(--clr-background-slateblue),
+        var(--clr-background-royalblue)
+    );
+}
+footer .attribution {
+    margin: 1rem;
+}
+@media (max-width: 375px) {
+    .result {
+        border-radius: 0 0 30px 30px;
+    }
+}
